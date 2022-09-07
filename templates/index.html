@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}} ">
+    <title>Say Greetings</title>
+</head>
+<body>
+    <img src="https://avatars.githubusercontent.com/u/102820780?s=400&u=d89cc6eb631f321968140e94088f3ca4ea335557&v=4">
+    <br>
+    <p>Slimany Say Hello Web Application</p>
+    <br>
+    <form action="greet" method="post">
+        {% for message in get_flashed_messages()%}
+            <p> {{ message }} </p>
+        {% endfor %}
+        <br>
+        <input type="text" name="name_input" placeholder="Enter your name ">
+        <br>
+        <input type="submit" value="GREET" id="greet">
+    </form>
+
+</body>
+</html>
